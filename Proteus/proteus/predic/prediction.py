@@ -5,9 +5,9 @@ from sklearn.feature_selection import SelectFpr
 from sklearn.model_selection import StratifiedKFold, LeaveOneOut
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn import svm
-from proteus.predic import predlib as plib
+from Proteus.proteus.predic import predlib as plib
 from sklearn import preprocessing
-from proteus.matrix import tseries as ts
+from Proteus.proteus.matrix import tseries as ts
 from sklearn.svm import SVC
 from sklearn import metrics
 from sklearn import linear_model
