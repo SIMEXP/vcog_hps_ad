@@ -1,6 +1,6 @@
 FROM jupyter/scipy-notebookRUN 
 
-pip install --no-cache-dir notebook==5.*
+RUN pip install --no-cache-dir notebook==5.*
 
 USER jovyan
 
