@@ -4,4 +4,4 @@ RUN pip install --no-cache-dir notebook==5.*
 
 USER jovyan
 
-ENTRYPOINT ["jupyter", "notebook", "--ip=*"]
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
