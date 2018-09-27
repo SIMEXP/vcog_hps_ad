@@ -230,6 +230,6 @@ for diagnosis in Clinical:
 		
 
 ##Create CSV file for simulated data		
-gaussian_dataframe.to_csv('simulated_data_v2_test.csv', sep='\t', encoding='utf-8')
+gaussian_dataframe.to_csv('simulated_data_v2.csv', sep='\t', encoding='utf-8')
 
 
