@@ -1,4 +1,4 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/scipy-notebook:cf6258237ff9
 
 RUN pip install --no-cache-dir notebook==5.*
 
