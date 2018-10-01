@@ -1,8 +1,7 @@
 # vcog_hps_ad
 
 This repository contains packages, scripts, and notebooks for the following article [A signature of cognitive deficits and brain atrophy that is highly predictive of progression to Alzheimer’s dementia](https://doi.org/10.1101/352344).
-[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/HanadS/vcog_hps_ad/master)
-  
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/HanadS/vcog_hps_ad/master?filepath=%2Fvcog_hpc_prediction_simulated_data.ipynb)  
   
  adas13_mixed_effects.ipynb -  gives the linear mixed effects models for cognitive trajectories of groups
  adni_bl_vbm_pipeline_20171201.m - runs segmentation pipeline from Niak
