@@ -19,6 +19,8 @@ Here is a brief description of each item in the repository:
 * **simulation_script.py** - a Python script that generates simulated data from raw data 
 * **simulated_data.csv** - a comma separated value file that contains simulated data 
 * **spm_container** - an Octave package containing wrappers for [SPM12](https://www.fil.ion.ucl.ac.uk/spm/software/spm12/) functions for segmentation and DARTEL 
+
+This repository has also been archived on Zenodo: [![DOI](https://zenodo.org/badge/129415986.svg)](https://zenodo.org/badge/latestdoi/129415986)
  
 
  
