@@ -2,8 +2,7 @@
 
 This repository contains packages, scripts, and notebooks for the following article [A signature of cognitive deficits and brain atrophy that is highly predictive of progression to Alzheimer’s dementia](https://doi.org/10.1101/352344).
 
-Click the following link to reproduce the analysis with simulated data on binder: [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/HanadS/vcog_hps_ad/master?filepath=%2Fvcog_hpc_prediction_simulated_data.ipynb)  
-
+Click the following link to reproduce the analysis with simulated data on binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SIMEXP/vcog_hps_ad/master?filepath=%2Fvcog_hpc_prediction_simulated_data.ipynb)  
 Here is a brief description of each item in the repository:
 * **adas13_mixed_effects.ipynb** -  a Jupyter notebook that gives the linear mixed effects models for cognitive trajectories of different groups
 * **adni_bl_vbm_pipeline_20171201.m** - an Octave script that runs a segmentation pipeline from SPM12 inside a NIAK container
