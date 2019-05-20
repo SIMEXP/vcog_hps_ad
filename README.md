@@ -1,6 +1,7 @@
 # vcog_hps_ad
 
-This repository contains packages, scripts, and notebooks for the following article [A signature of cognitive deficits and brain atrophy that is highly predictive of progression to Alzheimer’s dementia](https://doi.org/10.1101/352344).
+This repository contains packages, scripts, and notebooks for the following article:
+Angela Tam, Christian Dansereau, Yasser Iturria-Medina, Sebastian Urchs, Pierre Orban, Hanad Sharmarke, John Breitner, Pierre Bellec, Alzheimer's Disease Neuroimaging Initiative, A highly predictive signature of cognition and brain atrophy for progression to Alzheimer's dementia, GigaScience, Volume 8, Issue 5, May 2019, giz055, [https://doi.org/10.1093/gigascience/giz055](https://doi.org/10.1093/gigascience/giz055)
 
 Click the following link to reproduce the analysis with simulated data on binder: [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/SIMEXP/vcog_hps_ad/master?filepath=%2Fvcog_hpc_prediction_simulated_data.ipynb)  
 Here is a brief description of each item in the repository:
