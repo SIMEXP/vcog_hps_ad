@@ -130,10 +130,8 @@ end
 
 %% Files_in
 files_in = psom_struct_defaults(files_in,...
-           { 'anat' , 'dartel_template' , 'stereo_template' },...
+          { 'anat' , 'dartel_template' , 'stereo_template' },...
            { NaN    , struct([])        , struct()          });
-
-%% Options
 opt = psom_struct_defaults(opt , ...
            { 'flag_test' , 'folder_out' , 'flag_verbose' , 'psom'   , 'anat2stereolin' },...
            { false       , NaN          , true           , struct() , struct()          });
@@ -146,7 +144,30 @@ opt.psom.path_logs = [opt.folder_out 'logs' filesep];
 pipeline = [];
 
 for num_s = 1:nb_subject
-    
+
+   
+   
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%   CROP NECK    %%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    clear files_in_tmp files_out_tmp opt_tmp
+    name_brick      = 'niak_brick_crop_neck'; 
+    subject         = list_subject{num_s};
+    name_job        = ['crop_neck_' subject];   
+
+    % Files in
+    files_in_tmp              = list_anat{num_s};
+
+    files_out_tmp = [opt.folder_out filesep subject filesep subject '_T1w_cropped.nii'];
+    opt_tmp.crop_neck    = 0.25;
+
+
+    pipeline = psom_add_job(pipeline,name_job,name_brick,files_in_tmp,files_out_tmp,opt_tmp);   
+    	
+    % Get filename for linear registration
+    files_in_coreg = pipeline.(name_job).files_out;
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %% Run a linear coregistration in stereotaxic space %%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -158,7 +179,7 @@ for num_s = 1:nb_subject
     name_job        = ['t1_stereolin_' subject];
     
     % Files in
-    files_in_tmp.t1              = list_anat{num_s};
+    files_in_tmp.t1              = files_in_coreg;
     files_in_tmp.t1_mask         = 'gb_niak_omitted';
     % Building default input names for template
     if isfield(files_in.stereo_template, 'template')
@@ -180,12 +201,15 @@ for num_s = 1:nb_subject
     opt_tmp.flag_verbose         = opt.flag_verbose;
     opt_tmp.folder_out = [opt.folder_out filesep subject];
     
+
+   
     % Add job
     pipeline = psom_add_job(pipeline,name_job,name_brick,files_in_tmp,files_out_tmp,opt_tmp);   
     
     % Get names for AC-PC alignment
     files_in_acpc = pipeline.(name_job).files_out.t1_stereolin;
-    
+
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     %% Align to AC-PC                                   %%
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
